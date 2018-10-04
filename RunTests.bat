@@ -1,0 +1,1 @@
+packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console BabysitterKata.Tests\bin\Debug\BabysitterKata.Tests.dll
