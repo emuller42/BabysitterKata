@@ -28,5 +28,13 @@ namespace BabysitterKata
             }
             return returnHours;
         }
+
+        public int GetTotalPayBeforeBedtime(DateTime startTime, DateTime endTime)
+        {
+            int returnPay = 0;
+            int hours = GetHoursBeforeBedtime(startTime, endTime);
+            returnPay = GetPay(hours, BEFORE_BEDTIME_RATE);
+            return returnPay;
+        }
     }
 }
