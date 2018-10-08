@@ -32,6 +32,7 @@ namespace BabysitterKata.Tests
 
         [Test]
         [TestCase(1, 16)]
+        [TestCase(2, 32)]
         public void GetAfterMidnightPayTest(int hours, int expectedPay)
         {
             PayCalculator payCalculator = new PayCalculator();
