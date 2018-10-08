@@ -14,12 +14,19 @@ namespace BabysitterKata.Tests
         private const int AFTER_BEDTIME_RATE = 8;
         private const int AFTER_MIDNIGHT_RATE = 16;
 
+        private PayCalculator payCalculator;
+
+        [SetUp]
+        public void SetUp()
+        {
+            payCalculator = new PayCalculator();
+        }
+
         [Test]
         [TestCase(1, 12)]
         [TestCase(2, 24)]
         public void GetPayBeforeBedtimeTest(int hours, int expectedPay)
         {
-            PayCalculator payCalculator = new PayCalculator();
             int actualPay = payCalculator.GetPay(hours, BEFORE_BEDTIME_RATE);
             Assert.AreEqual(expectedPay, actualPay);
         }
@@ -29,7 +36,6 @@ namespace BabysitterKata.Tests
         [TestCase(2, 16)]
         public void GetPayAfterBedtimeTest(int hours, int expectedPay)
         {
-            PayCalculator payCalculator = new PayCalculator();
             int actualPay = payCalculator.GetPay(hours, AFTER_BEDTIME_RATE);
             Assert.AreEqual(expectedPay, actualPay);
         }
@@ -39,7 +45,6 @@ namespace BabysitterKata.Tests
         [TestCase(2, 32)]
         public void GetPayAfterMidnightTest(int hours, int expectedPay)
         {
-            PayCalculator payCalculator = new PayCalculator();
             int actualPay = payCalculator.GetPay(hours, AFTER_MIDNIGHT_RATE);
             Assert.AreEqual(expectedPay, actualPay);
         }
@@ -50,7 +55,6 @@ namespace BabysitterKata.Tests
             const int expectedHours = 1;
             DateTime startTime = new DateTime(2011, 11, 11, 17, 0, 0);
             DateTime endTime = new DateTime(2011, 11, 11, 18, 0, 0);
-            PayCalculator payCalculator = new PayCalculator();
             int actualHours = payCalculator.GetHoursBeforeBedtime(startTime, endTime);
             Assert.AreEqual(expectedHours, actualHours);
         }
