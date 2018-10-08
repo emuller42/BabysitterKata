@@ -17,10 +17,10 @@ namespace BabysitterKata
             return hours * rate;
         }
 
-        public int GetHoursBeforeBedtime(DateTime startTime, DateTime endTime)
+        public int GetHoursBeforeBedtime(DateTime startTime, DateTime endTime, DateTime bedTime)
         {
             int returnHours = 0;
-            TimeSpan timeWorked = endTime - startTime;
+            TimeSpan timeWorked = bedTime - startTime;
             returnHours = timeWorked.Hours;
             if (timeWorked.Minutes > 0)
             {
@@ -32,7 +32,7 @@ namespace BabysitterKata
         public int GetTotalPayBeforeBedtime(DateTime startTime, DateTime endTime)
         {
             int returnPay = 0;
-            int hours = GetHoursBeforeBedtime(startTime, endTime);
+            int hours = GetHoursBeforeBedtime(startTime, endTime, endTime);
             returnPay = GetPay(hours, BEFORE_BEDTIME_RATE);
             return returnPay;
         }
