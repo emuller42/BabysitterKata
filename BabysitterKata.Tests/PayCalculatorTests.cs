@@ -90,7 +90,7 @@ namespace BabysitterKata.Tests
         }
 
         [Test]
-        public void GetTotalPayBeforeBedtime()
+        public void GetTotalPayBeforeBedtimeTest()
         {
             const int expectedPay = 12;
             DateTime startTime = new DateTime(2011, 11, 11, 17, 0, 0);
