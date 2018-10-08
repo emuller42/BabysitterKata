@@ -8,18 +8,13 @@ namespace BabysitterKata
 {
     public class PayCalculator
     {
-        private const int RATE = 12;
+        private const int BEFORE_BEDTIME_RATE = 12;
         private const int AFTER_BEDTIME_RATE = 8;
         private const int AFTER_MIDNIGHT_RATE = 16;
 
-        public int GetPay(int hours)
+        public int GetPay(int hours, int rate)
         {
-            return RATE * hours;
-        }
-
-        public int GetAfterBedtimePay(int hours)
-        {
-            return AFTER_BEDTIME_RATE * hours;
+            return hours * rate;
         }
 
         public int GetAfterMidnightPay(int hours)
