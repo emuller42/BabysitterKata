@@ -10,6 +10,7 @@ namespace BabysitterKata
     {
         private const int RATE = 12;
         private const int AFTER_BEDTIME_RATE = 8;
+        private const int AFTER_MIDNIGHT_RATE = 16;
 
         public int GetPay(int hours)
         {
@@ -19,6 +20,11 @@ namespace BabysitterKata
         public int GetAfterBedtimePay(int hours)
         {
             return AFTER_BEDTIME_RATE * hours;
+        }
+
+        public int GetAfterMidnightPay(int hours)
+        {
+            return AFTER_MIDNIGHT_RATE * hours;
         }
     }
 }

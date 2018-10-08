@@ -29,5 +29,14 @@ namespace BabysitterKata.Tests
             int actualPay = payCalculator.GetAfterBedtimePay(hours);
             Assert.AreEqual(expectedPay, actualPay);
         }
+
+        [Test]
+        [TestCase(1, 16)]
+        public void GetAfterMidnightPayTest(int hours, int expectedPay)
+        {
+            PayCalculator payCalculator = new PayCalculator();
+            int actualPay = payCalculator.GetAfterMidnightPay(hours);
+            Assert.AreEqual(expectedPay, actualPay);
+        }
     }
 }
