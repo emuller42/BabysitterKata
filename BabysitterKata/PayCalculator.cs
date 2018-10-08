@@ -16,10 +16,5 @@ namespace BabysitterKata
         {
             return hours * rate;
         }
-
-        public int GetAfterMidnightPay(int hours)
-        {
-            return AFTER_MIDNIGHT_RATE * hours;
-        }
     }
 }
