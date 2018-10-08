@@ -19,7 +19,14 @@ namespace BabysitterKata
 
         public int GetHoursBeforeBedtime(DateTime startTime, DateTime endTime)
         {
-            return (endTime - startTime).Hours;
+            int returnHours = 0;
+            TimeSpan timeWorked = endTime - startTime;
+            returnHours = timeWorked.Hours;
+            if (timeWorked.Minutes > 0)
+            {
+                returnHours += 1;
+            }
+            return returnHours;
         }
     }
 }

@@ -58,5 +58,15 @@ namespace BabysitterKata.Tests
             int actualHours = payCalculator.GetHoursBeforeBedtime(startTime, endTime);
             Assert.AreEqual(expectedHours, actualHours);
         }
+
+        [Test]
+        public void GetHoursBeforeBedtimeFractionalHourTest()
+        {
+            const int expectedHours = 1;
+            DateTime startTime = new DateTime(2011, 11, 11, 17, 0, 0);
+            DateTime endTime = new DateTime(2011, 11, 11, 17, 1, 0);
+            int actualHours = payCalculator.GetHoursBeforeBedtime(startTime, endTime);
+            Assert.AreEqual(expectedHours, actualHours);
+        }
     }
 }
