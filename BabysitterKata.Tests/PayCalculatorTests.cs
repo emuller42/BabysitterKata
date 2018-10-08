@@ -112,16 +112,5 @@ namespace BabysitterKata.Tests
             int actualPay = payCalculator.GetTotalPayBeforeBedtime(startTime, endTime);
             Assert.AreEqual(expectedPay, actualPay);
         }
-
-        [Test]
-        public void GetHoursBeforeBedtimeEnhancedTest()
-        {
-            const int expectedHours = 1;
-            DateTime startTime = new DateTime(2011, 11, 11, 17, 0, 0);
-            DateTime endTime = new DateTime(2011, 11, 11, 19, 0, 0);
-            DateTime bedTime = new DateTime(2011, 11, 11, 18, 0, 0);
-            int actualHours = payCalculator.GetHoursBeforeBedtime(startTime, endTime, bedTime);
-            Assert.AreEqual(expectedHours, actualHours);
-        }
     }
 }
