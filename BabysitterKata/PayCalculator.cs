@@ -10,9 +10,9 @@ namespace BabysitterKata
     {
         private const int RATE = 12;
 
-        public int GetPay()
+        public int GetPay(int hours)
         {
-            return RATE;
+            return RATE * hours;
         }
     }
 }
