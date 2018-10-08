@@ -16,5 +16,10 @@ namespace BabysitterKata
         {
             return hours * rate;
         }
+
+        public int GetHoursBeforeBedtime(DateTime startTime, DateTime endTime)
+        {
+            return (endTime - startTime).Hours;
+        }
     }
 }
