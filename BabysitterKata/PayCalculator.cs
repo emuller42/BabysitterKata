@@ -44,5 +44,15 @@ namespace BabysitterKata
             returnTime = DateTime.Today.AddHours(parsedHour);
             return returnTime;
         }
+
+        public int GetTotalPay(string[] inputs)
+        {
+            int returnPay = 0;
+            DateTime startTime = ParseHours(inputs[0]);
+            DateTime endTime = ParseHours(inputs[1]);
+            DateTime bedTime = ParseHours(inputs[2]);
+            returnPay += GetTotalPayBeforeBedtime(startTime, endTime, bedTime);
+            return returnPay;
+        }
     }
 }

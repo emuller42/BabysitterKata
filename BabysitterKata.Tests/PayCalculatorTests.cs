@@ -123,5 +123,14 @@ namespace BabysitterKata.Tests
             DateTime actualTime = payCalculator.ParseHours(hourString);
             Assert.AreEqual(expectedTime, actualTime);
         }
+
+        [Test]
+        public void GetTotalPayTest()
+        {
+            int expectedPay = 24;
+            string[] inputs = { "17", "23", "19" };
+            int actualPay = payCalculator.GetTotalPay(inputs);
+            Assert.AreEqual(expectedPay, actualPay);
+        }
     }
 }
