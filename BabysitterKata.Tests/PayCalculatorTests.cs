@@ -98,8 +98,9 @@ namespace BabysitterKata.Tests
         {
             const int expectedPay = 12;
             DateTime startTime = new DateTime(2011, 11, 11, 17, 0, 0);
-            DateTime endTime = new DateTime(2011, 11, 11, 18, 0, 0);
-            int actualPay = payCalculator.GetTotalPayBeforeBedtime(startTime, endTime);
+            DateTime endTime = new DateTime(2011, 11, 11, 23, 0, 0);
+            DateTime bedTime = new DateTime(2011, 11, 11, 18, 0, 0);
+            int actualPay = payCalculator.GetTotalPayBeforeBedtime(startTime, endTime, bedTime);
             Assert.AreEqual(expectedPay, actualPay);
         }
 
@@ -108,8 +109,9 @@ namespace BabysitterKata.Tests
         {
             const int expectedPay = 36;
             DateTime startTime = new DateTime(2011, 11, 11, 17, 0, 0);
-            DateTime endTime = new DateTime(2011, 11, 11, 19, 30, 0);
-            int actualPay = payCalculator.GetTotalPayBeforeBedtime(startTime, endTime);
+            DateTime endTime = new DateTime(2011, 11, 11, 23, 0, 0);
+            DateTime bedTime = new DateTime(2011, 11, 11, 19, 30, 0);
+            int actualPay = payCalculator.GetTotalPayBeforeBedtime(startTime, endTime, bedTime);
             Assert.AreEqual(expectedPay, actualPay);
         }
 

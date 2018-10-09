@@ -29,10 +29,10 @@ namespace BabysitterKata
             return returnHours;
         }
 
-        public int GetTotalPayBeforeBedtime(DateTime startTime, DateTime endTime)
+        public int GetTotalPayBeforeBedtime(DateTime startTime, DateTime endTime, DateTime bedTime)
         {
             int returnPay = 0;
-            int hours = GetHoursBeforeBedtime(startTime, endTime, endTime);
+            int hours = GetHoursBeforeBedtime(startTime, endTime, bedTime);
             returnPay = GetPay(hours, BEFORE_BEDTIME_RATE);
             return returnPay;
         }
