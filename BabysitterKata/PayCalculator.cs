@@ -36,5 +36,13 @@ namespace BabysitterKata
             returnPay = GetPay(hours, BEFORE_BEDTIME_RATE);
             return returnPay;
         }
+
+        public DateTime ParseHours(string hourString)
+        {
+            DateTime returnTime;
+            int parsedHour = Int32.Parse(hourString);
+            returnTime = DateTime.Today.AddHours(parsedHour);
+            return returnTime;
+        }
     }
 }

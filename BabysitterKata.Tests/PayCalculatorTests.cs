@@ -112,5 +112,14 @@ namespace BabysitterKata.Tests
             int actualPay = payCalculator.GetTotalPayBeforeBedtime(startTime, endTime);
             Assert.AreEqual(expectedPay, actualPay);
         }
+
+        [Test]
+        public void ReadTimeTest()
+        {
+            DateTime expectedTime = DateTime.Today.AddHours(8);
+            string hourString = "8";
+            DateTime actualTime = payCalculator.ParseHours(hourString);
+            Assert.AreEqual(expectedTime, actualTime);
+        }
     }
 }
